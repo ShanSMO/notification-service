@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node dist",
     "clean": "rimraf ./dist",
     "local": "ts-node src",
-    "local:watch": "nodemon src -e ts,json --exec 'npm run local'"
+    "local:watch": "nodemon src -e ts,json --exec 'npm run local'",
+     "test": "jest"
   },
   "keywords": [],
   "author": "",
