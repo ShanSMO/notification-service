@@ -9,6 +9,11 @@ const timeLog = (_req: any, _res: any, next: () => void) => {
   }
 router.use(timeLog)
 
+router.get('/health', (req, res) => {
+  res.status(StatusCodes.OK).json({message: 'healthy'})
+});
+
+
 router.post('/send', (req, res) => {
     sendNotification({body: '', title: ''});
     res.status(StatusCodes.OK).json({message: 'Notification sent'});
