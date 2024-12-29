@@ -1,16 +1,16 @@
-import { ErrorResponse } from "../modals/ErrorResponse";
 import { NotificationMessage } from "../modals/NotificationMessage";
+import { ERROR_CODES, ERROR_MESSAGES, HTTP_STATUSES } from "../utils/errorCodes";
+import { createError } from "../utils/errorFactory";
 
 export const sendNotification = (message: NotificationMessage)  => {
     if (message.body) {
         console.log("Sent notification")
         return true;
     } else {
-        const error: ErrorResponse = {
-            message: 'Message body should not empty',
-            code: 'ER001',
-            status: 'BAD_REQUEST'
-        }
-        return error;
+        return createError(
+            ERROR_MESSAGES.EMPTY_BODY, 
+            ERROR_CODES.EMPTY_BODY, 
+            HTTP_STATUSES.BAD_REQUEST
+        );
     }
 }
