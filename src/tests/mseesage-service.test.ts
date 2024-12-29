@@ -6,8 +6,8 @@ describe("Test notification functions", () => {
             body: '',
             title: ''
         })).toEqual({
-            message: 'Message body should not empty',
-            code: 'ER001',
+            message: 'Message body should not be empty',
+            code: 'ER00400',
             status: 'BAD_REQUEST'
         });
     })

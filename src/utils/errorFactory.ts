@@ -4,6 +4,6 @@ type ErrorResponse = {
     status: string;
 };
 
-const createError = (message: string, code: string, status: string): ErrorResponse => {
+export const createError = (message: string, code: string, status: string): ErrorResponse => {
     return { message, code, status };
 };

@@ -1,5 +1,6 @@
 import { NotificationMessage } from "../modals/NotificationMessage";
 import { ERROR_CODES, ERROR_MESSAGES, HTTP_STATUSES } from "../utils/errorCodes";
+import { createError } from "../utils/errorFactory";
 
 export const sendNotification = (message: NotificationMessage)  => {
     if (message.body) {
